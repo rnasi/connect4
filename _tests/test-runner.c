@@ -5,9 +5,6 @@
 #include <stdio.h>
 #include "test.h"
 
-int test_suites_run = 0;
-int tests_run = 0;
-
 int all_tests() {
     _runSuite("Check Wins", S_checkWins);
     return 0;
@@ -18,8 +15,10 @@ int main(int argc, char **argv) {
     tests_run = 0;
 
     int result = all_tests();
+    printf("\n\n");
     if (result == 0)
-        printf("\n\nPASSED ALL TESTS\n");
+        printf("PASSED ALL TESTS\n");
+    printf("Test suites run: %d\n", test_suites_run);
     printf("Tests run: %d\n", tests_run);
 
     return result != 0;

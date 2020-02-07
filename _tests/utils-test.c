@@ -66,7 +66,29 @@ int T_handleNonWinningBoards() {
 }
 
 int T_handleHorizontalWins() {
-    
+    player board1[6][7] = {
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {1, 1, 1, 1, 2, 2, 2},
+    };
+
+    _assert(checkWins(board1) == ONE);
+
+     player board2[6][7] = {
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0},
+            {1, 1, 1, 2, 2, 2, 2},
+    };
+
+    _assert(checkWins(board2) == TWO);
+
+    return 0;
 }
 
 
