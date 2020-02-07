@@ -4,6 +4,6 @@
 
 #include "utils.h"
 
-player checkWins(player board[8][8]) {
-    return ONE;
+player checkWins(player board[6][7]) {
+    return NONE;
 }

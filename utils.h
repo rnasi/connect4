@@ -11,7 +11,7 @@ typedef enum {
     TWO = 2
 } player;
 
-player checkWins(player board[8][8]);
+player checkWins(player board[6][7]);
 
 #endif //CONNECT4_UTILS_H
 
