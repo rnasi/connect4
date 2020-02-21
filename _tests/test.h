@@ -5,7 +5,7 @@
 #ifndef CONNECT4_TEST_H
 #define CONNECT4_TEST_H
 
-#define FAIL() printf("\nfailure in %s() line %d\n", __func__, __LINE__)
+#define FAIL() printf("\nFAILURE in %s() line %d\n", __func__, __LINE__)
 #define _assert(test) do { if (!(test)) { FAIL(); return 1; } } while(0)
 #define _runSuite(description, testSuite) do { printf("\n"); printf(description); printf("\n"); int r=testSuite(); test_suites_run++; if(r) return r; } while(0)
 #define _verify(description, test) do { printf("  "); printf(description); printf("--"); int r=test(); tests_run++; if(r) return r; printf("Passed\n"); } while(0)

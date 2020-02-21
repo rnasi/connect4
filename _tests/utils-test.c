@@ -29,11 +29,11 @@ int T_handleNonWinningBoards() {
 
     _assert(checkWins(board2) == NONE);
 
-    player board3[6][7] = {
-            {2, 2, 2, 1, 1, 1, 2},
+  player board3[6][7] = {
             {1, 1, 1, 2, 2, 2, 1},
             {2, 2, 2, 1, 1, 1, 2},
-            {1, 1, 1, 2, 2, 2, 1},
+            {2, 1, 1, 1, 2, 2, 2},
+            {1, 2, 2, 2, 1, 1, 1},
             {2, 2, 2, 1, 1, 1, 2},
             {1, 1, 1, 2, 2, 2, 1},
     };
@@ -41,6 +41,17 @@ int T_handleNonWinningBoards() {
     _assert(checkWins(board3) == NONE);
 
     player board4[6][7] = {
+            {2, 2, 2, 1, 1, 1, 2},
+            {1, 1, 1, 2, 2, 2, 1},
+            {2, 2, 2, 1, 1, 1, 2},
+            {1, 1, 1, 2, 2, 2, 1},
+            {2, 2, 2, 1, 1, 1, 2},
+            {1, 1, 1, 2, 2, 2, 1},
+    };
+
+    _assert(checkWins(board4) == NONE);
+
+    player board5[6][7] = {
             {1, 2, 1, 2, 1, 2, 1},
             {2, 1, 2, 1, 2, 1, 2},
             {1, 2, 1, 2, 1, 2, 1},
@@ -49,9 +60,9 @@ int T_handleNonWinningBoards() {
             {1, 2, 1, 2, 1, 2, 1},
     };
 
-    _assert(checkWins(board4) == NONE);
+    _assert(checkWins(board5) == NONE);
 
-    player board5[6][7] = {
+    player board6[6][7] = {
             {0, 0, 2, 0, 0, 0, 0},
             {0, 0, 1, 0, 0, 0, 0},
             {1, 1, 2, 0, 0, 0, 2},
@@ -60,7 +71,7 @@ int T_handleNonWinningBoards() {
             {1, 2, 2, 2, 1, 1, 1},
     };
 
-    _assert(checkWins(board5) == NONE);
+    _assert(checkWins(board6) == NONE);
 
     return 0;
 }
@@ -87,6 +98,61 @@ int T_handleHorizontalWins() {
     };
 
     _assert(checkWins(board2) == TWO);
+
+    player board3[6][7] = {
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 1, 1, 1, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board3) == ONE);
+
+    player board4[6][7] = {
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 2, 2, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board4) == TWO);
+
+    player board5[6][7] = {
+            {2, 2, 2, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board5) == TWO);
+
+    player board6[6][7] = {
+            {2, 1, 2, 1, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 2, 2, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board6) == TWO);
+
+    player board7[6][7] = {
+            {2, 1, 2, 1, 1, 1, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board7) == ONE);
 
     return 0;
 }
