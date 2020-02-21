@@ -157,10 +157,92 @@ int T_handleHorizontalWins() {
     return 0;
 }
 
+int T_handleVerticalWins() {
+    player board1[6][7] = {
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0},
+            {1, 2, 0, 0, 0, 0, 0},
+            {1, 2, 0, 0, 0, 0, 0},
+            {1, 2, 0, 0, 0, 0, 0},
+    };
+
+    _assert(checkWins(board1) == ONE);
+
+    player board2[6][7] = {
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 2},
+            {0, 0, 0, 0, 0, 0, 2},
+            {0, 0, 0, 0, 1, 0, 2},
+            {0, 0, 0, 0, 1, 1, 2},
+    };
+
+    _assert(checkWins(board2) == TWO);
+
+    player board3[6][7] = {
+            {2, 1, 2, 1, 2, 1, 2},
+            {2, 1, 2, 1, 2, 1, 2},
+            {2, 1, 2, 1, 2, 1, 2},
+            {2, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board3) == TWO);
+
+    player board4[6][7] = {
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 2, 1, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {2, 1, 2, 1, 2, 1, 2},
+    };
+
+    _assert(checkWins(board4) == ONE);
+
+       player board5[6][7] = {
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 1, 1, 2, 1, 1},
+            {2, 1, 2, 1, 2, 1, 2},
+            {2, 1, 2, 1, 2, 1, 2},
+    };
+
+    _assert(checkWins(board5) == ONE);
+
+    player board6[6][7] = {
+            {1, 2, 1, 2, 2, 2, 1},
+            {2, 1, 2, 1, 1, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 1, 2, 1, 1, 1, 2},
+            {1, 2, 1, 2, 2, 2, 1},
+    };
+
+    _assert(checkWins(board6) == ONE);
+
+    player board7[6][7] = {
+            {1, 1, 1, 2, 1, 2, 1},
+            {2, 2, 2, 1, 2, 1, 2},
+            {1, 2, 1, 2, 1, 2, 1},
+            {1, 2, 1, 2, 1, 2, 1},
+            {2, 2, 2, 1, 2, 1, 2},
+            {1, 1, 1, 2, 1, 2, 1},
+    };
+
+    _assert(checkWins(board7) == TWO);
+
+    return 0;
+}
+
 
 
 int S_checkWins() {
     _verify("Handle non-winning boards", T_handleNonWinningBoards);
     _verify("Handle horizontal win conditions", T_handleHorizontalWins);
+    _verify("Handle vertical win conditions", T_handleVerticalWins);
     return 0;
 }
