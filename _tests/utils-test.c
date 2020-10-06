@@ -238,8 +238,6 @@ int T_handleVerticalWins() {
     return 0;
 }
 
-
-
 int S_checkWins() {
     _verify("Handle non-winning boards", T_handleNonWinningBoards);
     _verify("Handle horizontal win conditions", T_handleHorizontalWins);
