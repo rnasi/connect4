@@ -1,3 +1,17 @@
-*.swp
+# IDEs
 .idea/
+.vscode/
+
+# Temp files
+*.swp
+
+# CMake generated files
 *cmake-build-debug/
+*CMakeCache.txt
+*CMakeFiles/
+*Makefile*
+*.cmake
+
+# Compiled executables
+connect4
+_tests/conect4_test
